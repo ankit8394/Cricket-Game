@@ -1,0 +1,117 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+.wrapper{
+    background-color: #CD6155;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.game_logo{
+    height: 500px;
+    width: 500px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.audio{
+    display: none;
+}
+#score_img{
+    height: 350px;
+    width: 350px;
+    object-fit: cover;
+    margin-top: -20px;
+    object-fit: cover;
+    mix-blend-mode: darken;
+    padding-top: 10px;
+}
+.game_panel{
+    background: #F7F7F7;
+    height: 500px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    border-radius: 10px;
+}
+#img{
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+}
+
+.player_button{
+    background: #3498DB;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14pt;
+    position: fixed;
+    margin-left: -70px;
+}
+
+.player_one_panel{
+    text-align: center;
+    width: 250px;
+    margin-top: 40px ;
+}
+.player_one_panel span{
+    font-size: 16pt;
+}
+.player_two_panel{
+    text-align: center;
+    width: 250px;
+    margin-top: 40px ;
+}
+.player_two_panel span{
+    font-size: 16pt;
+}
+.entry_panel{
+    background: url(assets/b_g_img.avif);
+    background-position: center;
+    background-size: cover;
+    height: 550px;
+    width: 700px;
+    border: 10px groove #D98880;
+    display: none;
+}
+.entry1, .entry2{
+    height: 50px;
+    margin-top: -10%;
+    border: none;
+    color: #fff;
+    font-size: 16pt;
+    padding-left: 10px;
+    background: transparent;
+}
+::placeholder{
+    color:#fff;
+    text-align: center;
+    background:rgba(0,0,0,0.5);
+}
+.vs{
+    height: 70px;
+    margin-left: 41.7%;
+    margin-top: 55%;
+    border-radius: 100px;
+}
+.start_btn{
+    background-color: #281048;
+    color: #fff;
+    padding: 13px;
+    font-size: 16pt;
+    margin-top: 20px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+}
