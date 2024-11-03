@@ -2,6 +2,16 @@
 let pone=0;
 let ptwo=0;
 let game_value=0;
+let ap = document.getElementById("player_1_name").value;
+let ap2 = document.getElementById("player_2_name").value;
+
+$(document).ready(function()
+{
+    var x = document.getElementById("audio");
+    $(".game_logo").click(function(){
+        x.play();
+    })
+});
 
 function play_game()
 {
@@ -33,11 +43,7 @@ function play_game()
     }
 }
 
-function next()
-{
-    document.getElementById("entry").style.display="none";
-    document.getElementById("gp").style.display="block";
-}
+
 function ccc()
 {
     document.getElementById("hide-img").style.display="none";
@@ -93,33 +99,52 @@ $("#play_one").click(function(){
     }
     });
 });
-        $("#strt-btn").click(function()
-        {
-            let ap=document.getElementById("player_1_name").value;
-            if(ap==="")
-            {
-                confirm("PLEASE ENTER YOUR NAME");
-                window.location.href = "file:///C:/Users/ankit/Desktop/PROJECTS/cricket.html";
-                
-            }
-            else{}
-        });
-        $("#strt-btn").click(function()
-        {
-            let ap2=document.getElementById("player_2_name").value;
-            if(ap2==="")
-            {
-                confirm("PLEASE ENTER YOUR NAME");
-                window.location.href = "file:///C:/Users/ankit/Desktop/PROJECTS/cricket.html";
-            }
-            else{   
-            }
-        });
 
-$(document).ready(function()
-{
-    var x = document.getElementById("audio");
-    $(".game_logo").click(function(){
-        x.play();
-    })
+
+$("#strt-btn").click(function(event) {
+    event.preventDefault(); // Prevent default action (e.g., form submission or navigation)
+
+    if (ap === "") {
+        showPopup("PLEASE ENTER PLAYER 1'S NAME");
+        return; // Stop execution if player 1's name is empty
+    } 
+    
+    if (ap2 === "") {
+        showPopup("PLEASE ENTER PLAYER 2'S NAME");
+        return; // Stop execution if player 2's name is empty
+    }
 });
+
+
+function next() {
+     
+    // Check if player 1's name is empty
+     if (ap === "") {
+        showPopup("PLEASE ENTER PLAYER 1'S NAME");
+        return; // Stop execution if player 1's name is empty
+    } 
+    // Check if player 2's name is empty
+    else if (ap2 === "") {
+        showPopup("PLEASE ENTER PLAYER 2'S NAME");
+        return; // Stop execution if player 2's name is empty
+    }
+    // If both names are filled
+    if (ap !== "" && ap2 !== "") { 
+        document.getElementById("entry").style.display = "none"; // Hide the entry section
+    document.getElementById("gp").style.display = "block"; // Show the game section
+    }
+   
+}
+
+// Function to show the popup with a custom message
+function showPopup(message) {
+    document.getElementById("popup-message").textContent = message;
+    document.getElementById("popup").style.display = "flex";
+}
+
+// Close popup when clicking "OK" button
+document.getElementById("popup-close").addEventListener("click", function() {
+    document.getElementById("popup").style.display = "none";
+});
+
+
