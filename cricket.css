@@ -140,3 +140,41 @@
     margin-top: 10px;
     padding: 5px 10px;
 }
+
+#scoreboard {
+    display: none; /* Initially hidden, will be displayed with JS */
+    background-color: #f9f9f9; /* Light background for contrast */
+    border: 2px solid #4CAF50; /* Green border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Space inside the div */
+    text-align: center; /* Center align text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+    margin: 20px auto; /* Center the scoreboard with auto margins */
+    max-width: 300px; /* Set a max width */
+}
+
+#scoreboard h2 {
+    color: #4CAF50; /* Green color for headings */
+    font-family: Arial, sans-serif; /* Font style */
+}
+
+#scoreboard p {
+    font-size: 18px; /* Increase font size for scores */
+    margin: 10px 0; /* Space between paragraphs */
+    font-family: Arial, sans-serif; /* Font style */
+}
+
+#reset_game {
+    background-color: #4CAF50; /* Green background for the button */
+    color: white; /* White text */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Padding for the button */
+    cursor: pointer; /* Change cursor to pointer */
+    font-size: 16px; /* Font size for button text */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+#reset_game:hover {
+    background-color: #45a049; /* Darker green on hover */
+}

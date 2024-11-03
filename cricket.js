@@ -66,8 +66,8 @@ $(document).ready(function() {
             $("#final_p_one").html(eval($("#p_one").html()));
             $("#final_p_two").html(eval($("#p_two").html()));
             $("#scoreboard").show(); // Show the scoreboard
-            $("#hit-the-ball").hide(); 
-            $("#bbg").hide(); 
+            $("#hit-the-ball").css("display", "none"); // Set display to none for the hit-the-ball section
+            $("#img").css("display", "none"); // Set display to none for the image section
         } else {
             play_game();
             if (pone == 1) {
@@ -87,8 +87,8 @@ $(document).ready(function() {
             $("#final_p_one").html(eval($("#p_one").html()));
             $("#final_p_two").html(eval($("#p_two").html()));
             $("#scoreboard").show(); // Show the scoreboard
-            $("#hit-the-ball").hide(); 
-            $("#bbg").hide(); 
+            $("#hit-the-ball").css("display", "none"); // Set display to none for the hit-the-ball section
+            $("#img").css("display", "none"); // Set display to none for the image section
         } else {
             play_game();
             if (ptwo == 1) {
