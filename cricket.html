@@ -27,7 +27,7 @@
             <div class="fix" style="margin-top: 50px;">
                 <div id="img"><p id="bbg"><img src="assets/readyplay.png" id="score_img" alt="IMAGE HERE">
                 </p></div>
-                <div class="row">
+                <div class="row" id="hit-the-ball">
                     <div class="player_one_panel">
                         <span id="p_one"></span><br>
                         <button class="player_button" id="play_one">TAP TO PLAY!</button>
@@ -38,6 +38,12 @@
                     </div>
                 </div>
             </div>
+            <div id="scoreboard" style="display:none;">
+                <h2>Game Over!</h2>
+                <p>Player One Score: <span id="final_p_one"></span></p>
+                <p>Player Two Score: <span id="final_p_two"></span></p>
+                <button id="reset_game">Play Again</button>
+            </div>
         </div>
         <div id="popup" class="popup">
             <div class="popup-content">
@@ -46,11 +52,9 @@
             </div>
         </div>
         
-        <div id="result-f">
-            <div>
-                <img src="" alt="">
-            </div>
-        </div>
+        
+        
+
     </div>
     <audio src="assets/ipl-1522.mp3" controls class="audio" id="audio"></audio>
 
