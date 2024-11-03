@@ -4,6 +4,7 @@ let ptwo=0;
 let game_value=0;
 
 
+
 $(document).ready(function()
 {
     var x = document.getElementById("audio");
@@ -59,6 +60,7 @@ $(document).ready(function() {
         x.play();
     });
 
+
     $("#play_one").click(function() {
         pone++;
         if (pone >= 7) {
@@ -66,8 +68,8 @@ $(document).ready(function() {
             $("#final_p_one").html(eval($("#p_one").html()));
             $("#final_p_two").html(eval($("#p_two").html()));
             $("#scoreboard").show(); // Show the scoreboard
-            $("#hit-the-ball").css("display", "none"); // Set display to none for the hit-the-ball section
-            $("#img").css("display", "none"); // Set display to none for the image section
+            $("#hit-the-ball").css("display", "none"); // Hide the hit-the-ball section
+            $("#img").css("display", "none"); // Hide the image section
         } else {
             play_game();
             if (pone == 1) {
@@ -87,8 +89,8 @@ $(document).ready(function() {
             $("#final_p_one").html(eval($("#p_one").html()));
             $("#final_p_two").html(eval($("#p_two").html()));
             $("#scoreboard").show(); // Show the scoreboard
-            $("#hit-the-ball").css("display", "none"); // Set display to none for the hit-the-ball section
-            $("#img").css("display", "none"); // Set display to none for the image section
+            $("#hit-the-ball").css("display", "none"); // Hide the hit-the-ball section
+            $("#img").css("display", "none"); // Hide the image section
         } else {
             play_game();
             if (ptwo == 1) {
@@ -108,10 +110,14 @@ $(document).ready(function() {
         $("#p_one").html("0");
         $("#p_two").html("0");
         $("#scoreboard").hide();
+        $("#hit-the-ball").css("display", "block"); // Show the hit-the-ball section again when resetting the game
+        $("#bbg").css("display", "block"); // Show the image section again when resetting the game
+        $("#scoreboard").empty(); // Clear the scoreboard for a fresh start
         $("#play_one").removeAttr("disabled");
         $("#play_two").attr("disabled", "disabled");
     });
 });
+
 
 
 
