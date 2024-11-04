@@ -10,23 +10,30 @@
 <body>
     <div class="wrapper">
         <img src="assets/Untitled design.png" alt="image here" id="hide-img" onclick="ccc()"  class="game_logo">
-        <div >
             <div class="entry_panel" id="entry">
-                <div><img class="vs" src="assets/vs.avif" alt=""></div>
-            <div style="display: flex;justify-content: center;align-items: center; gap: 130px;">
-            <input type="text" required placeholder="PLAYER-1 NAME'S HERE" class="entry1" id="player_1_name">
-            
-            <input type="text" required placeholder="PLAYER-2 NAME'S HERE" class="entry2" id="player_2_name">
+                <div>
+                    <img class="vs" src="assets/vs.avif" alt="img">
+                </div>
+                <div style="display: flex;justify-content: center;align-items: center; gap: 130px;">
+                    <input type="text" 
+                            required placeholder="PLAYER-1 NAME'S HERE" 
+                            class="entry1" id="player_1_name">
+                    
+                    <input type="text" 
+                            required placeholder="PLAYER-2 NAME'S HERE" 
+                            class="entry2" id="player_2_name">
                 </div>
                 <div style="display: grid;place-content: center;">
                     <button id="strt-btn" onclick="next()" class="start_btn">GET START</button>
                 </div>
             </div>
-        </div>
         <div class="game_panel" id="gp">
             <div class="fix" style="margin-top: 50px;">
-                <div id="img"><p id="bbg"><img src="assets/readyplay.png" id="score_img" alt="IMAGE HERE">
-                </p></div>
+                <div id="img">
+                    <p id="bbg">
+                        <img src="assets/readyplay.png" id="score_img" alt="IMAGE HERE">
+                    </p>
+                </div>
                 <div class="row" id="hit-the-ball">
                     <div class="player_one_panel">
                         <span id="p_one"></span><br>

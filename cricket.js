@@ -105,17 +105,9 @@ $(document).ready(function() {
 
     // Reset game functionality (optional)
     $("#reset_game").click(function() {
-        pone = 0;
-        ptwo = 0;
-        $("#p_one").html("0");
-        $("#p_two").html("0");
-        $("#scoreboard").hide();
-        $("#hit-the-ball").css("display", "block"); // Show the hit-the-ball section again when resetting the game
-        $("#bbg").css("display", "block"); // Show the image section again when resetting the game
-        $("#scoreboard").empty(); // Clear the scoreboard for a fresh start
-        $("#play_one").removeAttr("disabled");
-        $("#play_two").attr("disabled", "disabled");
+        location.reload(); // Reload the current page
     });
+    
 });
 
 
