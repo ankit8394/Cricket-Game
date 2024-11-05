@@ -3,8 +3,6 @@ let pone=0;
 let ptwo=0;
 let game_value=0;
 
-
-
 $(document).ready(function()
 {
     var x = document.getElementById("audio");
@@ -49,9 +47,6 @@ function ccc()
     document.getElementById("hide-img").style.display="none";
     document.getElementById("entry").style.display="block";
 }
-
-
-
 
 
 $(document).ready(function() {
@@ -111,15 +106,8 @@ $(document).ready(function() {
 });
 
 
-
-
-
-
-
-
-
-
-function next() {
+function next()
+{
     let ap = document.getElementById("player_1_name").value;
     let ap2 = document.getElementById("player_2_name").value;
      
@@ -142,13 +130,15 @@ function next() {
 };
 
 // Function to show the popup with a custom message
-function showPopup(message) {
+function showPopup(message)
+{
     document.getElementById("popup-message").textContent = message;
     document.getElementById("popup").style.display = "flex";
 };
 
 // Close popup when clicking "OK" button
-document.getElementById("popup-close").addEventListener("click", function() {
+document.getElementById("popup-close").addEventListener("click", function()
+{
     document.getElementById("popup").style.display = "none";
 });
 
