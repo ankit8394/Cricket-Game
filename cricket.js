@@ -6,6 +6,8 @@ let play_one_name=[];
 let play_one_two=[];
 let a=0;
 let b=0;
+let i=0;
+
 
 $(document).ready(function()
 {
@@ -110,32 +112,38 @@ $(document).ready(function() {
 });
 
 
-function next()
-{
-    let ap = document.getElementById("player_1_name").value;
-    let ap2 = document.getElementById("player_2_name").value;
-     
+
+function next() {
+    // Get the values inside the function
+    const ap = document.getElementById("player_1_name").value.trim(); // Get Player 1's name
+    const ap2 = document.getElementById("player_2_name").value.trim(); // Get Player 2's name
+
     // Check if player 1's name is empty
-     if (ap === "") {
+    if (ap === "") {
         showPopup("PLEASE ENTER PLAYER 1'S NAME");
         return; // Stop execution if player 1's name is empty
-    } 
+    }
+
     // Check if player 2's name is empty
-    else if (ap2 === "") {
+    if (ap2 === "") {
         showPopup("PLEASE ENTER PLAYER 2'S NAME");
         return; // Stop execution if player 2's name is empty
     }
+
     // If both names are filled
-    if (ap !== "" && ap2 !== "") { 
-        document.getElementById("entry").style.display = "none"; // Hide the entry section
+    document.getElementById("entry").style.display = "none"; // Hide the entry section
     document.getElementById("gp").style.display = "block"; // Show the game section
-        a[i] = document.getElementById("player_1_name").value;
-        b[i] = document.getElementById("player_2_name").value;
-        document.getElementById("name1").innerHTML += a[i];
-        document.getElementById("name2").innerHTML += b[i];
-    }
-   
-};
+
+    // Store the names
+    play_one_name[i] = ap;
+    play_one_two[i] = ap2;
+
+    // Show the names in the scoreboard or elsewhere
+    document.getElementById("name1").innerHTML = play_one_name[i];
+    document.getElementById("name2").innerHTML = play_one_two[i];
+
+    i++; // Increment index for the next round
+}
 
 // Function to show the popup with a custom message
 function showPopup(message)

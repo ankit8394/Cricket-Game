@@ -16,11 +16,13 @@
                 </div>
                 <div style="display: flex;justify-content: center;align-items: center; gap: 130px;">
                     <input type="text" 
-                            required placeholder="PLAYER-1 NAME'S HERE" 
+                            required 
+                            placeholder="PLAYER-1 NAME'S HERE" 
                             class="entry1" id="player_1_name">
                     
                     <input type="text" 
-                            required placeholder="PLAYER-2 NAME'S HERE" 
+                            required
+                            placeholder="PLAYER-2 NAME'S HERE" 
                             class="entry2" id="player_2_name">
                 </div>
                 <div style="display: grid;place-content: center;">
@@ -45,10 +47,14 @@
                     </div>
                 </div>
             </div>
-            <div id="scoreboard" style="display:none;">
+            <div id="scoreboard" style="display: none;">
                 <h2>Game Over!</h2>
-                <p><div id="name1"></div> <span id="final_p_one"></span></p>
-                <p><div id="name2"></div> <span id="final_p_two"></span></p>
+                <p>
+                    Player 1: <span id="name1"></span> - <span id="final_p_one"></span>
+                </p>
+                <p>
+                    Player 2: <span id="name2"></span> - <span id="final_p_two"></span>
+                </p>
                 <button id="reset_game">Play Again</button>
             </div>
         </div>
