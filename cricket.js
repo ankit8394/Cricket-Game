@@ -2,6 +2,10 @@
 let pone=0;
 let ptwo=0;
 let game_value=0;
+let play_one_name=[];
+let play_one_two=[];
+let a=0;
+let b=0;
 
 $(document).ready(function()
 {
@@ -125,6 +129,10 @@ function next()
     if (ap !== "" && ap2 !== "") { 
         document.getElementById("entry").style.display = "none"; // Hide the entry section
     document.getElementById("gp").style.display = "block"; // Show the game section
+        a[i] = document.getElementById("player_1_name").value;
+        b[i] = document.getElementById("player_2_name").value;
+        document.getElementById("name1").innerHTML += a[i];
+        document.getElementById("name2").innerHTML += b[i];
     }
    
 };
