@@ -59,6 +59,9 @@
     position: fixed;
     margin-left: -70px;
 }
+.player_button:hover{
+    
+}
 
 .player_one_panel{
     text-align: center;
@@ -106,15 +109,32 @@
     border-radius: 100px;
 }
 .start_btn{
-    background-color: #281048;
+    background-color: #5917af;
     color: #fff;
-    padding: 13px;
+    padding: .5em 1em;
     font-size: 16pt;
     margin-top: 20px;
-    font-weight: 600;
-    border: none;
+    border: 2px solid #281048;
     border-radius: 5px;
+    transform-style: preserve-3d;
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
+        background 150ms cubic-bezier(0, 0, 0.58, 1);
 }
+
+.start_btn:hover {
+    background: #281048;
+    transform: translateY(-0.25em);
+}
+.start_btn:active {
+    background: #5917af;
+    transform: translate(0em, 0.75em);
+}
+
+/*
+.start_btn:hover{
+    transform: scale(1.1);
+    transition: ease 2s;
+}*/
 
 .popup {
     display: none; /* Initially hidden */
