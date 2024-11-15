@@ -21,8 +21,8 @@ function play_game()
 {
     game_value=Math.floor((Math.random()+0)*7);
     
-    document.getElementById("score_img").style.height="400px";
-    document.getElementById("score_img").style.width="400px";
+    document.getElementById("score_img").style.height="350px";
+    document.getElementById("score_img").style.width="350px";
     if(game_value==0){
         document.getElementById("score_img").src="assets/zero.gif";
     }
