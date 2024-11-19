@@ -108,18 +108,35 @@ $(document).ready(function() {
     $("#reset_game").click(function() {
         location.reload(); // Reload the current page
     });
-    let finalScoreOne = $("#final_p_one").html();
-    let finalScoreTwo = $("#final_p_two").html();
-    console.log(finalScoreOne);
-
-    if (finalScoreOne > finalScoreTwo) {
-        $("#winner").html("Player One Wins!"); // Display winner message
-    } else if (finalScoreOne < finalScoreTwo) {
-        $("#winner").html("Player Two Wins!"); // Display winner message
-    } else {
-        $("#winner").html("It's a Draw!"); // Handle tie case
-    }
     
+    
+});
+$(document).ready(function () {
+    // Retrieve, evaluate, and compare scores
+    let rawP1 = $("#final_p_one").html(); // Get Player One's score
+    let rawP2 = $("#final_p_two").html(); // Get Player Two's score
+
+    console.log("Raw Player One Score:", rawP1);
+    console.log("Raw Player Two Score:", rawP2);
+
+    // Parse the scores to integers (default to 0 if empty or invalid)
+    let scoreP1 = parseInt(rawP1 || "0", 10);
+    let scoreP2 = parseInt(rawP2 || "0", 10);
+
+    console.log("Player One Final Score:", scoreP1);
+    console.log("Player Two Final Score:", scoreP2);
+
+    // Compare scores and update the winner message
+    if (scoreP1 > scoreP2) {
+        $("#winner").html(`Winner: ${$("#name1").html()} (Player 1)`);
+    } else if (scoreP1 < scoreP2) {
+        $("#winner").html(`Winner: ${$("#name2").html()} (Player 2)`);
+    } else {
+        $("#winner").html("It's a Draw!");
+    }
+
+    // Ensure the scoreboard is displayed
+    $("#scoreboard").show();
 });
 
 
