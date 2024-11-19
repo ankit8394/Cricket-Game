@@ -108,6 +108,17 @@ $(document).ready(function() {
     $("#reset_game").click(function() {
         location.reload(); // Reload the current page
     });
+    let finalScoreOne = $("#final_p_one").html();
+    let finalScoreTwo = $("#final_p_two").html();
+    console.log(finalScoreOne);
+
+    if (finalScoreOne > finalScoreTwo) {
+        $("#winner").html("Player One Wins!"); // Display winner message
+    } else if (finalScoreOne < finalScoreTwo) {
+        $("#winner").html("Player Two Wins!"); // Display winner message
+    } else {
+        $("#winner").html("It's a Draw!"); // Handle tie case
+    }
     
 });
 
