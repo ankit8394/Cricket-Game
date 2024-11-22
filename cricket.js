@@ -161,9 +161,8 @@ document.getElementById("popup-close").addEventListener("click", function()
 });
 
 
-let finalScoreOne = $("#final_p_one").html();
-let finalScoreTwo = $("#final_p_two").html();
-
+let finalScoreOne = parseInt($("#final_p_one").html(), 10); // Convert to integer
+let finalScoreTwo = parseInt($("#final_p_two").html(), 10); // Convert to integer
 
 if (finalScoreOne > finalScoreTwo) {
     $("#winner").html("Player One Wins!"); // Display winner message
