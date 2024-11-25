@@ -17,68 +17,52 @@ $(document).ready(function()
     })
 });
 
-function play_game()
-{
-    game_value=Math.floor((Math.random()+0)*7);
-    
-    document.getElementById("score_img").style.height="350px";
-    document.getElementById("score_img").style.width="350px";
-    if(game_value==0){
-        document.getElementById("score_img").src="assets/zero.gif";
-    }
-    else if(game_value==1){
-        document.getElementById("score_img").src="assets/one.gif";
-        
-    }
-    else if(game_value==2){
-        document.getElementById("score_img").src="assets/two.gif";
-    }
-    else if(game_value==3){
-        document.getElementById("score_img").src="assets/three.gif";
-    }
-    else if(game_value==4){
-        document.getElementById("score_img").src="assets/four.gif";
-    }
-    else if(game_value==5){
-        document.getElementById("score_img").src="assets/five.gif";
-    }
-    else if(game_value==6){
-        document.getElementById("score_img").src="assets/six.gif";
-    }
-}
-
-
-function ccc()
-{
-    document.getElementById("hide-img").style.display="none";
-    document.getElementById("entry").style.display="block";
-}
-
-
 $(document).ready(function() {
-    var x = document.getElementById("audio");
-    $(".game_logo").click(function() {
-        x.play();
-    });
+    let pone = 0;
+    let ptwo = 0;
+    let game_value = 0;
 
+    function play_game() {
+        game_value = Math.floor(Math.random() * 7);
+        document.getElementById("score_img").style.height = "350px";
+        document.getElementById("score_img").style.width = "350px";
+
+        const images = [
+            "assets/zero.gif", "assets/one.gif", "assets/two.gif",
+            "assets/three.gif", "assets/four.gif", "assets/five.gif", "assets/six.gif"
+        ];
+        document.getElementById("score_img").src = images[game_value];
+    }
+
+    function calculateScore(scoreString) {
+        return scoreString.split('+').reduce((sum, value) => sum + parseInt(value || 0, 10), 0);
+    }
 
     $("#play_one").click(function() {
         pone++;
         if (pone >= 7) {
-            // Update scores in the scoreboard
-            $("#final_p_one").html(eval($("#p_one").html()));
-            $("#final_p_two").html(eval($("#p_two").html()));
-            $("#scoreboard").show(); // Show the scoreboard
-            $("#hit-the-ball").css("display", "none"); // Hide the hit-the-ball section
-            $("#img").css("display", "none"); // Hide the image section
+            const finalScoreOne = calculateScore($("#p_one").html());
+            const finalScoreTwo = calculateScore($("#p_two").html());
+
+            $("#final_p_one").html(finalScoreOne);
+            $("#final_p_two").html(finalScoreTwo);
+
+            if (finalScoreOne > finalScoreTwo) {
+                $("#winner").html("Player One Wins!");
+            } else if (finalScoreOne < finalScoreTwo) {
+                $("#winner").html("Player Two Wins!");
+            } else {
+                $("#winner").html("It's a Draw!");
+            }
+
+            $("#scoreboard").show();
+            $("#hit-the-ball").css("display", "none");
+            $("#img").css("display", "none");
         } else {
             play_game();
-            if (pone == 1) {
-                $("#p_one").html($("#p_one").html() + game_value);
-            } else {
-                $("#p_one").html($("#p_one").html() + "+" + game_value);
-            }
-            $("#play_one").attr("disabled", "disabled");
+            const currentScore = $("#p_one").html();
+            $("#p_one").html(currentScore ? currentScore + "+" + game_value : game_value);
+            $("#play_one").attr("disabled", true);
             $("#play_two").removeAttr("disabled");
         }
     });
@@ -86,32 +70,37 @@ $(document).ready(function() {
     $("#play_two").click(function() {
         ptwo++;
         if (ptwo >= 7) {
-            // Update scores in the scoreboard
-            $("#final_p_one").html(eval($("#p_one").html()));
-            $("#final_p_two").html(eval($("#p_two").html()));
-            $("#scoreboard").show(); // Show the scoreboard
-            $("#hit-the-ball").css("display", "none"); // Hide the hit-the-ball section
-            $("#img").css("display", "none"); // Hide the image section
+            const finalScoreOne = calculateScore($("#p_one").html());
+            const finalScoreTwo = calculateScore($("#p_two").html());
+
+            $("#final_p_one").html(finalScoreOne);
+            $("#final_p_two").html(finalScoreTwo);
+
+            if (finalScoreOne > finalScoreTwo) {
+                $("#winner").html("Player One Wins!");
+            } else if (finalScoreOne < finalScoreTwo) {
+                $("#winner").html("Player Two Wins!");
+            } else {
+                $("#winner").html("It's a Draw!");
+            }
+
+            $("#scoreboard").show();
+            $("#hit-the-ball").css("display", "none");
+            $("#img").css("display", "none");
         } else {
             play_game();
-            if (ptwo == 1) {
-                $("#p_two").html($("#p_two").html() + game_value);
-            } else {
-                $("#p_two").html($("#p_two").html() + "+" + game_value);
-            }
-            $("#play_two").attr("disabled", "disabled");
+            const currentScore = $("#p_two").html();
+            $("#p_two").html(currentScore ? currentScore + "+" + game_value : game_value);
+            $("#play_two").attr("disabled", true);
             $("#play_one").removeAttr("disabled");
         }
     });
 
-    // Reset game functionality (optional)
     $("#reset_game").click(function() {
-        location.reload(); // Reload the current page
+        location.reload();
     });
-    
-  
-    
 });
+
 
 
 
@@ -164,7 +153,8 @@ document.getElementById("popup-close").addEventListener("click", function()
 let finalScoreOne = parseInt($("#final_p_one").html(), 10); // Convert to integer
 let finalScoreTwo = parseInt($("#final_p_two").html(), 10); // Convert to integer
 
-if (finalScoreOne > finalScoreTwo) {
+if (finalScoreOne > finalScoreTwo)
+{
     $("#winner").html("Player One Wins!"); // Display winner message
 } else if (finalScoreOne < finalScoreTwo) {
     $("#winner").html("Player Two Wins!"); // Display winner message
