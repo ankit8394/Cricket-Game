@@ -16,6 +16,11 @@ $(document).ready(function()
         x.play();
     })
 });
+function ccc()
+{
+    document.getElementById("hide-img").style.display="none";
+    document.getElementById("entry").style.display="block";
+}
 
 $(document).ready(function() {
     let pone = 0;
