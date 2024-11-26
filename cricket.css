@@ -205,3 +205,7 @@
 #reset_game:hover {
     background-color: #45a049; /* Darker green on hover */
 }
+#winner{
+    margin: 10px 0px;
+    font-size: 28px;
+}

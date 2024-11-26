@@ -16,18 +16,18 @@ $(document).ready(function()
         x.play();
     })
 });
+
+
 function ccc()
 {
     document.getElementById("hide-img").style.display="none";
     document.getElementById("entry").style.display="block";
 }
 
-$(document).ready(function() {
-    let pone = 0;
-    let ptwo = 0;
-    let game_value = 0;
-
-    function play_game() {
+$(document).ready(function()
+{
+    function play_game()
+    {
         game_value = Math.floor(Math.random() * 7);
         document.getElementById("score_img").style.height = "350px";
         document.getElementById("score_img").style.width = "350px";
@@ -39,11 +39,13 @@ $(document).ready(function() {
         document.getElementById("score_img").src = images[game_value];
     }
 
-    function calculateScore(scoreString) {
+    function calculateScore(scoreString)
+    {
         return scoreString.split('+').reduce((sum, value) => sum + parseInt(value || 0, 10), 0);
     }
 
-    $("#play_one").click(function() {
+    $("#play_one").click(function()
+    {
         pone++;
         if (pone >= 7) {
             const finalScoreOne = calculateScore($("#p_one").html());
@@ -72,7 +74,8 @@ $(document).ready(function() {
         }
     });
 
-    $("#play_two").click(function() {
+    $("#play_two").click(function()
+    {
         ptwo++;
         if (ptwo >= 7) {
             const finalScoreOne = calculateScore($("#p_one").html());
@@ -101,7 +104,8 @@ $(document).ready(function() {
         }
     });
 
-    $("#reset_game").click(function() {
+    $("#reset_game").click(function()
+    {
         location.reload();
     });
 });
@@ -109,7 +113,8 @@ $(document).ready(function() {
 
 
 
-function next() {
+function next() 
+{
     // Get the values inside the function
     const ap = document.getElementById("player_1_name").value.trim(); // Get Player 1's name
     const ap2 = document.getElementById("player_2_name").value.trim(); // Get Player 2's name
