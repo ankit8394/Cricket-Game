@@ -5,3 +5,4 @@ Welcome to the One Over Cricket Game! This is a simple and exciting cricket game
 Single Over Gameplay: Each team gets only 6 balls to score as many runs as possible.<br>
 Interactive: User-friendly interface with engaging visuals.<br>
 Dynamic Scoring: Tracks runs and remaining balls in real-time.<br>
+
