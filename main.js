@@ -171,3 +171,12 @@ if (finalScoreOne > finalScoreTwo)
 } else {
     $("#winner").html("It's a Draw!"); // Handle tie case
 }
+// Check if the device is mobile
+function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  }
+  
+  // Enforce landscape mode if on mobile
+  if (isMobile()) {
+    screen.orientation.lock('landscape'); 
+  }

@@ -97,7 +97,8 @@
 }
 .entry1, .entry2{
     height: 50px;
-    margin-top: -10%;
+    max-width: 160px;
+    margin-top: -8%;
     border: none;
     color: #fff;
     font-size: 16pt;
