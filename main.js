@@ -55,12 +55,12 @@ $(document).ready(function()
             $("#final_p_two").html(finalScoreTwo);
 
             if (finalScoreOne > finalScoreTwo) {
-                $("#winner").html("Player One Wins!");
+                $("#winner").html(play_one_name[i - 1] + " Wins!");
             } else if (finalScoreOne < finalScoreTwo) {
-                $("#winner").html("Player Two Wins!");
+                $("#winner").html(play_one_two[i - 1] + " Wins!");
             } else {
                 $("#winner").html("It's a Draw!");
-            }
+            }            
 
             $("#scoreboard").show();
             $("#hit-the-ball").css("display", "none");
@@ -85,12 +85,13 @@ $(document).ready(function()
             $("#final_p_two").html(finalScoreTwo);
 
             if (finalScoreOne > finalScoreTwo) {
-                $("#winner").html("Player One Wins!");
+                $("#winner").html(play_one_name[i - 1] + " Wins!");
             } else if (finalScoreOne < finalScoreTwo) {
-                $("#winner").html("Player Two Wins!");
+                $("#winner").html(play_one_two[i - 1] + " Wins!");
             } else {
                 $("#winner").html("It's a Draw!");
             }
+            
 
             $("#scoreboard").show();
             $("#hit-the-ball").css("display", "none");
@@ -158,25 +159,3 @@ document.getElementById("popup-close").addEventListener("click", function()
 {
     document.getElementById("popup").style.display = "none";
 });
-
-
-let finalScoreOne = parseInt($("#final_p_one").html(), 10); // Convert to integer
-let finalScoreTwo = parseInt($("#final_p_two").html(), 10); // Convert to integer
-
-if (finalScoreOne > finalScoreTwo)
-{
-    $("#winner").html("Player One Wins!"); // Display winner message
-} else if (finalScoreOne < finalScoreTwo) {
-    $("#winner").html("Player Two Wins!"); // Display winner message
-} else {
-    $("#winner").html("It's a Draw!"); // Handle tie case
-}
-// Check if the device is mobile
-function isMobile() {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-  }
-  
-  // Enforce landscape mode if on mobile
-  if (isMobile()) {
-    screen.orientation.lock('landscape'); 
-  }

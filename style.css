@@ -9,6 +9,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0;
+    margin: 0;
 }
 .game_logo{
     height: 500px;
@@ -96,23 +98,39 @@
     display: none;
 }
 .entry1, .entry2{
-    height: 50px;
-    max-width: 160px;
+    padding: 5px;
+    max-width: 150px;
     margin-top: -8%;
     border: none;
-    color: #fff;
+    color: #fff !important;
     font-size: 16pt;
-    padding-left: 10px;
-    background: transparent;
+    background:rgba(0,0,0,0.5);
+    border-radius: 5px;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    background-color: transparent !important; /* Ensures autofill background is transparent */
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset !important; /* Removes autofill background effect */
+    -webkit-text-fill-color: #fff !important; /* Keeps autofill text color white */
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+
 ::placeholder{
     color:#fff;
     text-align: center;
-    background:rgba(0,0,0,0.5);
+    border-radius: 5px;
+}
+.vs-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .vs{
     height: 70px;
-    margin-left: 41.7%;
     margin-top: 55%;
     border-radius: 100px;
 }
@@ -128,6 +146,7 @@
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #032d04;
+    margin-top: 10px;
   }
   
   .start_btn:hover {background-color: #3e8e41}
@@ -179,6 +198,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
     margin: 20px auto; /* Center the scoreboard with auto margins */
     max-width: 300px; /* Set a max width */
+    margin-top: 85px;
 }
 
 #scoreboard h2 {
@@ -210,3 +230,42 @@
     margin: 10px 0px;
     font-size: 28px;
 }
+
+
+
+
+@media (max-width: 440px) {
+    .game_logo{
+        height: 380px;
+        width: 380px;
+    }
+    .vs{
+        height: 70px;
+        margin-top: 86%;
+        border-radius: 100px;
+    }
+    .start_btn {
+        margin-top: 5px;
+    }
+      .namediv{
+        margin-top: 35px;
+    }
+    .game_panel{
+        height: 390px;
+        width: 390px;
+        margin-top: -15%;
+    }
+    .player_button {
+        padding: 15px 10px;
+        font-size: 24px;
+        text-align: center;
+        cursor: pointer;
+        outline: none;
+        color: #fff;
+        background-color: #3498DB;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #166099;
+    }
+}
+

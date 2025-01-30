@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cricket Game</title>
+    <meta name="theme-color" content="#CD6155"> 
     <meta property="og:title" content="Cricket Game - One over">
     <meta name="description" content="Play the ultimate cricket game - One over! Experience realistic gameplay, exciting matches, and challenge your friends. Perfect for cricket enthusiasts.">
     <meta name="keywords" content="Cricket Game, Play Cricket, Cricket Matches, Sports Games">
@@ -15,10 +16,10 @@
     <div class="wrapper">
         <img src="assets/Untitled design.png" alt="image here" id="hide-img" onclick="ccc()"  class="game_logo">
             <div class="entry_panel" id="entry">
-                <div>
+                <div class="vs-div">
                     <img class="vs" src="assets/vs.avif" alt="img">
                 </div>
-                <div style="display: flex;justify-content: space-around;align-items: center;">
+                <div class="namediv" style="display: flex;justify-content: space-around;align-items: center;">
                     <input type="text" 
                             required 
                             placeholder="PLAYER-1" 
@@ -54,10 +55,10 @@
             <div id="scoreboard" style="display: none;">
                 <h2>Game Over!</h2>
                 <p>
-                    Player 1: <span id="name1"></span> - <span id="final_p_one"></span>
+                    <span id="name1"></span> - <span id="final_p_one"></span>
                 </p>
                 <p>
-                    Player 2: <span id="name2"></span> - <span id="final_p_two"></span>
+                    <span id="name2"></span> - <span id="final_p_two"></span>
                 </p>
                 <h3 id="winner"></h3>
                 <button id="reset_game">Play Again</button>
@@ -70,11 +71,10 @@
                 <button id="popup-close">OK</button>
             </div>
         </div>
-        
-        
-        
-
     </div>
+
+    
+    
     <audio src="assets/ipl-1522.mp3" controls class="audio" id="audio"></audio>
 
 <script src="main.js"></script>
