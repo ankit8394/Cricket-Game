@@ -128,10 +128,10 @@ input:-webkit-autofill:active {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 55%;
 }
 .vs{
     height: 70px;
-    margin-top: 55%;
     border-radius: 100px;
 }
 
@@ -157,11 +157,6 @@ input:-webkit-autofill:active {
     transform: translateY(4px);
   }
 
-/*
-.start_btn:hover{
-    transform: scale(1.1);
-    transition: ease 2s;
-}*/
 
 .popup {
     display: none; /* Initially hidden */
@@ -230,24 +225,24 @@ input:-webkit-autofill:active {
     margin: 10px 0px;
     font-size: 28px;
 }
-
-
-
-
+@media (max-width: 531px) {
+    .game_logo{
+        height: 380px;
+        width: 380px;
+    }
+}
 @media (max-width: 440px) {
     .game_logo{
         height: 380px;
         width: 380px;
     }
-    .vs{
-        height: 70px;
-        margin-top: 86%;
-        border-radius: 100px;
+    .vs-div{
+        margin-top: 87%;
     }
     .start_btn {
         margin-top: 5px;
     }
-      .namediv{
+    .namediv{
         margin-top: 35px;
     }
     .game_panel{
@@ -257,15 +252,44 @@ input:-webkit-autofill:active {
     }
     .player_button {
         padding: 15px 10px;
-        font-size: 24px;
-        text-align: center;
-        cursor: pointer;
-        outline: none;
-        color: #fff;
-        background-color: #3498DB;
-        border: none;
-        border-radius: 15px;
-        box-shadow: 0 9px #166099;
     }
 }
 
+@media (max-width: 376px) {
+    .game_logo{
+        max-width: 310px;
+    }
+    .entry_panel {
+        height: 550px;
+        max-width: 300px;
+    }
+    .entry1, .entry2 {
+        padding: 5px;
+        max-width: 120px;
+    }
+    .vs-div{
+        margin-top: 350px;
+    }
+    .game_panel{
+        height: 310px;
+        width: 310px;
+        margin-top: -15%;
+    }
+    #score_img {
+        height: 290px;
+        width: 290px;
+        margin-top: -90px;
+    }
+    .player_button {
+        padding: 5px 15px;
+        font-size: 20px;
+        margin: 5px;
+    }
+    .player_one_panel,.player_two_panel{
+        margin-top: 20px ;
+    }
+    #scoreboard {
+        margin-top: 0px;
+        width: 240px;
+    }
+}
