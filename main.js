@@ -112,6 +112,15 @@ $(document).ready(function()
 });
 
 
+$(document).ready(function () {
+    var clickSound = document.getElementById("clickSound"); // Get sound element
+
+    $("#play_one, #play_two").click(function () {
+        clickSound.play(); // Play sound effect on button click
+    });
+});
+
+
 
 
 function next() 
